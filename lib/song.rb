@@ -20,7 +20,10 @@ class Song
     parsed_name = name.split(" - ")
     song = Song.new(parsed_name[0])
     song.artist = Artist.find_or_create_by_name(parsed_name[1])
-    
+  end
+  
+  def artistname=(name)
+    @artist = Artist.find_or_create_by_name(name)
   end
   
   def save
